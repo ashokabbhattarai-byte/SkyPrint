@@ -38,6 +38,10 @@ export interface PrintingStage {
   progressStart: number;
   progressEnd: number;
   inkChannels: ("C" | "M" | "Y" | "K")[];
+  /** Concrete customer-facing facts shown on the hero stage card. */
+  points?: string[];
+  /** Service title (from SERVICES) preselected when quoting from this stage. */
+  quoteService?: string;
 }
 
 export interface CapabilityItem {

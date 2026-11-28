@@ -1,25 +1,18 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Manrope, Syne } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
-
-const syne = Syne({
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  variable: "--font-syne",
-  display: "swap",
-});
 
 const manrope = Manrope({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["600", "700", "800"],
   variable: "--font-manrope",
   display: "swap",
 });
 
-const ibmPlexMono = IBM_Plex_Mono({
+const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
-  variable: "--font-ibm-mono",
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -43,11 +36,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${syne.variable} ${manrope.variable} ${ibmPlexMono.variable}`}
-    >
-      <body className="min-h-screen bg-[#0B1018] text-[#E6ECF5] antialiased">
+    <html lang="en" className={`${manrope.variable} ${inter.variable}`}>
+      <body className="min-h-screen bg-white text-[#202B36] antialiased">
         {children}
       </body>
     </html>

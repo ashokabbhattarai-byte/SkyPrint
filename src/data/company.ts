@@ -14,6 +14,8 @@ export const COMPANY_INFO = {
   mobilePrimary: "9852682481",
   mobileSecondary: "9817072805",
   whatsappNumber: "+9779852682481",
+  googleMapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Sky+Print+%26+Advertising+Pvt.+Ltd.+Bhadrapur+Road+Birtamode+Jhapa+Nepal",
   socials: {
     facebookPlaceholder: true,
     instagramPlaceholder: true,

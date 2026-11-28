@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { InkUnderline } from "@/components/animations/Reveal";
 
 interface SectionHeadingProps {
   eyebrow: string;
@@ -35,14 +36,14 @@ export function SectionHeading({
     >
       <div
         className={cn(
-          "mb-3.5 inline-flex items-center gap-2.5 font-mono text-[11px] font-semibold tracking-[0.18em] uppercase",
-          isDark ? "text-[#39C9E9]" : "text-[#079BD3]"
+          "mb-3 inline-flex items-center gap-2.5 text-xs font-semibold tracking-[0.14em] uppercase",
+          isDark ? "text-[#36B9D8]" : "text-[#078FCB]"
         )}
       >
         <span
           className={cn(
-            "h-[2px] w-5",
-            isDark ? "bg-[#39C9E9]" : "bg-[#079BD3]"
+            "h-0.5 w-5",
+            isDark ? "bg-[#F7941D]" : "bg-[#F7941D]"
           )}
           aria-hidden="true"
         />
@@ -51,15 +52,21 @@ export function SectionHeading({
 
       <h2
         className={cn(
-          "font-display text-3xl font-bold tracking-[-0.03em] sm:text-4xl lg:text-[2.85rem] lg:leading-[1.08]",
-          isDark ? "text-[#F1F5F9]" : "text-[#111827]"
+          "font-display text-3xl font-extrabold tracking-[-0.025em] sm:text-4xl lg:text-[2.65rem] lg:leading-[1.12]",
+          isDark ? "text-white" : "text-[#153B60]"
         )}
       >
         {accentWord && parts.length === 2 ? (
           <>
             {parts[0]}
-            <span className={isDark ? "text-[#39C9E9]" : "text-[#079BD3]"}>
+            <span
+              className={cn(
+                "relative inline-block",
+                isDark ? "text-[#36B9D8]" : "text-[#078FCB]"
+              )}
+            >
               {accentWord}
+              <InkUnderline />
             </span>
             {parts[1]}
           </>
@@ -71,8 +78,8 @@ export function SectionHeading({
       {description && (
         <p
           className={cn(
-            "mt-4 text-base leading-relaxed sm:text-[17px]",
-            isDark ? "text-slate-300" : "text-slate-600"
+            "mt-4 text-base leading-relaxed",
+            isDark ? "text-slate-200" : "text-[#202B36]/85"
           )}
         >
           {description}

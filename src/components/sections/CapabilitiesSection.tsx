@@ -28,9 +28,9 @@ export function CapabilitiesSection() {
       gsap.utils.toArray<HTMLElement>(".cap-image-reveal").forEach((el) => {
         gsap.fromTo(
           el,
-          { clipPath: "inset(8% 0% 8% 0% round 12px)", opacity: 0.4 },
+          { clipPath: "inset(8% 0% 8% 0% round 8px)", opacity: 0.4 },
           {
-            clipPath: "inset(0% 0% 0% 0% round 12px)",
+            clipPath: "inset(0% 0% 0% 0% round 8px)",
             opacity: 1,
             duration: 0.9,
             ease: "power3.out",
@@ -50,13 +50,12 @@ export function CapabilitiesSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative border-t border-white/10 bg-[#0E1520] py-20 text-[#E6ECF5] sm:py-28"
+      className="relative border-t border-slate-200 bg-white py-20 text-[#202B36] sm:py-28"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-end gap-8 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <SectionHeading
-              theme="dark"
               eyebrow="Production Infrastructure"
               title="Built for Commercial Scale & Tactile Detail."
               accentWord="Tactile Detail."
@@ -65,8 +64,8 @@ export function CapabilitiesSection() {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="overflow-hidden rounded-xl border border-white/12 bg-[#131C2B] p-2">
-              <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-[#0B1018]">
+            <div className="overflow-hidden rounded-lg border border-slate-200 bg-[#F5F7F9] p-2">
+              <div className="relative aspect-video w-full overflow-hidden rounded bg-[#153B60]">
                 <RemotionPlayer
                   component={ProductReveal}
                   durationInFrames={120}
@@ -79,9 +78,9 @@ export function CapabilitiesSection() {
                   style={{ width: "100%", height: "100%" }}
                 />
               </div>
-              <div className="flex items-center justify-between px-2 pt-2 pb-1 font-mono text-[11px] text-slate-400">
+              <div className="flex items-center justify-between px-2 pt-2 pb-1 text-xs text-slate-500">
                 <span>Remotion Studio Reel · Product Suite</span>
-                <span className="text-[#39C9E9]">1280×720 · 30fps</span>
+                <span className="font-semibold text-[#078FCB]">1280×720 · 30fps</span>
               </div>
             </div>
           </div>
@@ -97,7 +96,7 @@ export function CapabilitiesSection() {
               >
                 <div
                   className={cn(
-                    "cap-image-reveal relative aspect-[16/10] overflow-hidden rounded-xl border border-white/12 bg-[#131C2B] lg:col-span-7",
+                    "cap-image-reveal relative aspect-[16/10] overflow-hidden rounded-lg border border-slate-200 bg-[#F5F7F9] lg:col-span-7",
                     reversed && "lg:order-2"
                   )}
                 >
@@ -111,16 +110,16 @@ export function CapabilitiesSection() {
                 </div>
 
                 <div className={cn("lg:col-span-5", reversed && "lg:order-1")}>
-                  <span className="font-mono text-xs font-semibold tracking-[0.18em] text-[#39C9E9]">
+                  <span className="text-xs font-bold tracking-[0.16em] text-[#078FCB] uppercase">
                     {cap.code}
                   </span>
-                  <h3 className="mt-3 font-display text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                  <h3 className="mt-3 font-display text-2xl font-bold tracking-tight text-[#153B60] sm:text-3xl">
                     {cap.title}
                   </h3>
-                  <p className="mt-2 text-base font-medium text-[#F7941D]">
+                  <p className="mt-2 text-base font-semibold text-[#F7941D]">
                     {cap.subtitle}
                   </p>
-                  <p className="mt-4 text-sm leading-relaxed text-slate-300 sm:text-base">
+                  <p className="mt-4 text-sm leading-relaxed text-[#202B36]/85 sm:text-base">
                     {cap.description}
                   </p>
 
@@ -128,7 +127,7 @@ export function CapabilitiesSection() {
                     {cap.specs.map((spec) => (
                       <span
                         key={spec}
-                        className="rounded-md border border-white/12 bg-[#131C2B] px-3.5 py-1.5 font-mono text-xs font-medium text-slate-200"
+                        className="rounded border border-slate-200 bg-[#F5F7F9] px-3.5 py-1.5 text-xs font-medium text-[#153B60]"
                       >
                         {spec}
                       </span>

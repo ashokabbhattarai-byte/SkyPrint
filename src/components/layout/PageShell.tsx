@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { SmoothScroll } from "@/components/animations/SmoothScroll";
+import { InkSpray } from "@/components/animations/InkSpray";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { QuoteModal } from "@/components/ui/QuoteModal";
+import { MessageAlertPopup } from "@/components/ui/MessageAlertPopup";
 
 interface PageShellProps {
   children: (openQuoteFor: (service?: string) => void) => React.ReactNode;
@@ -21,10 +23,13 @@ export function PageShell({ children }: PageShellProps) {
 
   return (
     <SmoothScroll>
-      <div className="relative flex min-h-screen flex-col bg-[#0B1018] text-[#E6ECF5]">
+      <div className="relative flex min-h-screen flex-col bg-white text-[#202B36]">
         <Navbar onOpenQuote={openQuoteFor} />
-        <main className="flex-1">{children(openQuoteFor)}</main>
+        <main className="flex-1">
+          <InkSpray>{children(openQuoteFor)}</InkSpray>
+        </main>
         <Footer />
+        <MessageAlertPopup onSendMessage={() => openQuoteFor("Printing Works")} />
         <QuoteModal
           key={quoteService}
           open={quoteOpen}

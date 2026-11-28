@@ -1,7 +1,7 @@
 "use client";
 
 import { PageShell } from "@/components/layout/PageShell";
-import { FullPagePrintingDemo } from "@/components/sections/FullPagePrintingDemo";
+import { HeroScrollExperience } from "@/components/sections/HeroScrollExperience";
 import { TopServicesPreview } from "@/components/sections/TopServicesPreview";
 import { CTASection } from "@/components/sections/CTASection";
 
@@ -10,9 +10,7 @@ export default function HomePage() {
     <PageShell>
       {(openQuoteFor) => (
         <>
-          <FullPagePrintingDemo
-            onStartProject={() => openQuoteFor("Printing Works")}
-          />
+          <HeroScrollExperience onRequestQuote={openQuoteFor} />
           <TopServicesPreview onSelectService={openQuoteFor} />
           <CTASection onRequestQuote={() => openQuoteFor("Printing Works")} />
         </>
